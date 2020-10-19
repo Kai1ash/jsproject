@@ -31,7 +31,7 @@ export default ({card}) => {
         />
         <CardContent >
           <Typography gutterBottom variant="h5" component="h2">
-            {card.name}
+            {card.title}
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
             {card.desctiption}
