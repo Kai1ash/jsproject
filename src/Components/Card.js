@@ -8,7 +8,6 @@ import CardMedia from "@material-ui/core/CardMedia";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 
-
 const useStyles = makeStyles({
   root: {
     maxWidth: 345,
@@ -23,7 +22,6 @@ export default ({ card, setOpen, isOpen }) => {
   const classes = useStyles();
 
   return (
-    
     <Card className={classes.root}>
       <CardActionArea>
         <CardMedia
@@ -31,6 +29,7 @@ export default ({ card, setOpen, isOpen }) => {
           image={card.poster}
           title={card.title}
         />
+
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
             {card.title}
@@ -48,7 +47,7 @@ export default ({ card, setOpen, isOpen }) => {
           variant="outlined"
           size="small"
           href="#outlined-buttons"
-          onClick={()=> setOpen(!isOpen.isOpen)}
+          onClick={() => setOpen(!isOpen.isOpen)}
         >
           Learn more
         </Button>

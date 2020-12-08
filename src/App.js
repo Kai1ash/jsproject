@@ -28,12 +28,12 @@ export default function App(props) {
       <Container maxWidth="lg" className={classes.flex}>
         {cards.map((card) => (
           <>
-          <Card card={card} key={card.id} setOpen={setOpen} isOpen={isOpen} />
-          <Carousel isOpen={isOpen} setOpen={setOpen} card={card}/>
+            <Card card={card} key={card.id} setOpen={setOpen} isOpen={isOpen} />
+            <Carousel isOpen={isOpen} setOpen={setOpen} card={card} />
           </>
         ))}
       </Container>
-     
+
       <Footer />
     </React.Fragment>
   );
