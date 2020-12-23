@@ -17,19 +17,15 @@ const useStyles = makeStyles({
   },
 });
 
-export default function App(props) {
+const App = (props) => {
   const classes = useStyles();
 
   const [isOpen, setOpen] = useState(null);
   const [posterURL, setPosterURL] = useState(null);
 
-  function handlePosterURL(currentPosterURL) {
-    setPosterURL(currentPosterURL);
-  }
+  const handlePosterURL = (currentPosterURL) => setPosterURL(currentPosterURL);
 
-  function handleModal(flag) {
-    setOpen(flag);
-  }
+  const handleModal = (flag) => setOpen(flag);
 
   return (
     <Context.Provider value={cards}>
@@ -38,7 +34,7 @@ export default function App(props) {
         <Header />
         <Container maxWidth="lg" className={classes.flex}>
           <>
-          {cards.map((card) => (
+            {cards.map((card) => (
               <Card
                 card={card}
                 key={card.id}
@@ -46,8 +42,12 @@ export default function App(props) {
                 setPosterURL={handlePosterURL}
                 isOpen={isOpen}
               />
-          ))} 
-          <Modal isOpen={isOpen} setOpen={handleModal} posterURL={posterURL}/>
+            ))}
+            <Modal
+              isOpen={isOpen}
+              setOpen={handleModal}
+              posterURL={posterURL}
+            />
           </>
         </Container>
 
@@ -55,4 +55,5 @@ export default function App(props) {
       </React.Fragment>
     </Context.Provider>
   );
-}
+};
+export default App;
