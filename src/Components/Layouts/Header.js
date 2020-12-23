@@ -7,7 +7,7 @@ import InputBase from "@material-ui/core/InputBase";
 import { fade, makeStyles } from "@material-ui/core/styles";
 import MenuIcon from "@material-ui/icons/Menu";
 import SearchIcon from "@material-ui/icons/Search";
-import Logo from "../images/main_logo.png";
+import Logo from "../../images/main_logo.png"
 import Button from "@material-ui/core/Button";
 
 const useStyles = makeStyles((theme) => ({

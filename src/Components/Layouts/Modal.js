@@ -18,17 +18,8 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function TransitionsModal(isOpen, card) {
+export default function TransitionsModal({ isOpen, setOpen, posterURL }) {
   const classes = useStyles();
-  console.log(isOpen.card);
-
-  // const handleOpen = () => {
-  //   isOpen.setOpen(true);
-  // };
-
-  const handleClose = () => {
-    isOpen.setOpen(!isOpen);
-  };
 
   return (
     <div>
@@ -36,16 +27,19 @@ export default function TransitionsModal(isOpen, card) {
         aria-labelledby="transition-modal-title"
         aria-describedby="transition-modal-description"
         className={classes.modal}
-        open={isOpen.isOpen}
-        onClose={handleClose}
+        open={isOpen}
+        onClose={() => {
+          setOpen(false)
+        }}
         closeAfterTransition
         BackdropComponent={Backdrop}
         BackdropProps={{
           timeout: 500,
         }}
       >
-        <Fade in={isOpen.isOpen}>
-          <div className={classes.paper}>{isOpen.poster}</div>
+        <Fade in={isOpen}>
+          {/* <div className={classes.paper}><img src = {cards[0].poster} alt="img"/></div> */}
+          <div className={classes.paper}><img src={posterURL} alt="img"/></div>
         </Fade>
       </Modal>
     </div>

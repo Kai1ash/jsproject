@@ -18,9 +18,8 @@ const useStyles = makeStyles({
   },
 });
 
-export default ({ card, setOpen, isOpen }) => {
+const CardItem = ({ card, setOpen, setPosterURL }) => {
   const classes = useStyles();
-
   return (
     <Card className={classes.root}>
       <CardActionArea>
@@ -29,7 +28,6 @@ export default ({ card, setOpen, isOpen }) => {
           image={card.poster}
           title={card.title}
         />
-
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
             {card.title}
@@ -47,7 +45,10 @@ export default ({ card, setOpen, isOpen }) => {
           variant="outlined"
           size="small"
           href="#outlined-buttons"
-          onClick={() => setOpen(!isOpen.isOpen)}
+          onClick={() => {
+            setPosterURL(card.poster);
+            setOpen(true);
+          }}
         >
           Learn more
         </Button>
@@ -55,3 +56,5 @@ export default ({ card, setOpen, isOpen }) => {
     </Card>
   );
 };
+
+export default CardItem;
